@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project1</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;  
+      box-sizing: border-box; 
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #7ed4fb;
+      display: flex;
+      justify-content: center;
+      
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ade6f5;;
+      padding: 20px;
+      border-radius: 10px;
+      width: 60%;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    h1 {
+      font-size: 2rem;
+      color: #091c20;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: 100%;
+      background-color: #e0f7fa;
+      border: 1px solid #032926;
+      display: block;
+      margin: 20px auto;
+    }
+
+    #storyContainer {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      height: 250px;
+    }
+    #mar {
+      width: 100%;
+      background-color: #00796b;;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      direction: ltr;
+            
+        }
+        button {
+      background-color: #00796b;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      size: 1px;
+      border-radius: 40%;
+    }
+
+    button:hover {
+      background-color: #6feeb4;
+    }
+  </style>
+</head>
+<body>
+  <div id ="mar">
+  <marquee>HISTORICAL  ||  INSPIRATIONAL  ||  COMEDY  ||  ROMANTIC </marquee>
+  </div>
+  <div class="container">
+    <h1>Select your favorite movie genre</h1>
+    <select id="storyType"onchange="displayStory()" placeholder="select a genre">
+        <option value="">--Select a genre--</option>
+      <option value="Historical">Historical</option>
+      <option value="Inspirational">Inspirational</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Romantic">Romantic</option>
+    </select>
+
+    <div id="storyContainer">
+    </div>
+  </div>
+
+  <script>
+        
+        function displayStory() {
+      const storyType = document.getElementById('storyType').value;
+      const storyContainer = document.getElementById('storyContainer');
+      
+      if (storyType === '') {
+        storyContainer.innerHTML = 'Please select a genre';
+      } else {
+        let story = '';
+        if (storyType === 'Historical') {
+          story = `
+            <ul>
+               <li>Tanhaji: The Unsung Warrior <button onclick="window.location.href='https://www.youtube.com/watch?v=6oRSN0EKPh4'">View Trailer</button></li>
+              <li>Kesari                        <button onclick="window.location.href='https://www.youtube.com/watch?v=Apga5k6UBD4'">View Trailer</button></li>
+              <li>Chaava                        <button onclick="window.location.href='https://www.youtube.com/watch?v=ZZ3wK6edQQI'">View Trailer</button></li>
+              <li>Bajirao Mastani               <button onclick="window.location.href='https://www.youtube.com/watch?v=5Bjy4hZbyuk'">View Trailer</button></li>
+              <li>Jodhaa Akbar                  <button onclick="window.location.href='https://www.youtube.com/watch?v=7AKzWkzR6Z4'">View Trailer</button></li>
+            </ul>`;
+}
+
+        else if (storyType === 'Comedy') {
+            story = `<ul>
+            <li>  Munna Bhai M.B.B.S. <button onclick="window.location.href='https://www.youtube.com/watch?v=6f-EaUWCua0'"> View Trailer</button></li>
+            <li> 3 Idiots             <button onclick ="window.location.href='https://www.youtube.com/watch?v=K0eDlFX9GMc'"> View Trailer</button></li>
+            <li>Phir Hera Pheri       <button onclick = "window.location.href='https://www.youtube.com/watch?v=1rJQQCZcq2s'">View Trailer</button></li>
+            <li>Dhamaal               <button onclick="window.location.href='https://www.youtube.com/watch?v=D7felvV3JRc'">View Trailer</button></li>
+            <li>Chachi 420            <button onclick="window.locaton.href='https://www.youtube.com/watch?v=7HWSZBlcnPQ'">View Trailer</button></li>
+            </ul>`
+        } else if (storyType === 'Inspirational') {
+            story=`<ul>
+            <li>  Bhaag Milkha Bhaag <button onclick="window.location.href='https://www.youtube.com/watch?v=0nR9JS2WsNg'">View Trailer</button></li>
+            <li>  Black              <button onclick="window.location.href='https://www.youtube.com/watch?v=By-VTqrdqFI'">View Trailer</button></li></li>
+            <li>12TH Fail            <button onclick="window.location.href='https://www.youtube.com/watch?v=WeMJo701mvQ'">View Trailer</button></li></li>
+            <li>Mission Mangal       <button onclick="window.location.href='https://www.youtube.com/watch?v=q10nfS9V090'">View Trailer</button></li></li>
+            <li>Dangal               <button onclick="window.location.href='https://www.youtube.com/watch?v=x_7YlGv9u1g'">View Trailer</button></li></li>
+            </ul>`
+          
+        }
+          
+    else if (storyType === 'Romantic') {
+    story = `<ul>
+        <li>Dilwale Dulhania Le Jayenge <button onclick="window.location.href='https://www.youtube.com/watch?v=oIZ4U21DRlM&t=3s'">View Trailer</button></li>
+        <li>Kuch Kuch Hota Hai <button onclick="window.location.href='https://www.youtube.com/watch?v=83rVJ-rRPns'">View Trailer</button></li>
+        <li>Jab We Met <button onclick="window.location.href='https://www.youtube.com/watch?v=VoaKuOjez9k'">View Trailer</button></li>
+        <li>Sita Ramam <button onclick="window.location.href='https://www.youtube.com/watch?v=PFcE1Rw5lmo'">View Trailer</button></li>
+        <li>Hum Aapke Hain Kon <button onclick="window.location.href='https://www.youtube.com/watch?v=45JY12a6zJA'">View Trailer</button></li>
+    </ul>`;
+
+    
+}
+
+        
+
+storyContainer.innerHTML = story;
+      }
+    }
+  </script>
+
+</body>
+</html>
